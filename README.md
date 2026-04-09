@@ -101,7 +101,26 @@ Select all of MyHomePage, delete it, and replace with the following code:
 > ![Capture HP](images/01-bagian5.png)
 3. Place your cursor on the first line of MyHomePage (the one that starts with class MyHomePage...), and call up the Refactor menu using Ctrl+. or Cmd+.. Then, select Convert to StatefulWidget.
 > ![Capture HP](images/02-bagian5.png)
-4. The new stateful widget only needs to track one variable: selectedIndex. Make the following 3 changes to _MyHomePageState:
+4. The new stateful widget only needs to track one variable: selectedIndex. 
 > ![Capture HP](images/03-bagian5.png)
+5. Place the following code at the top of _MyHomePageState's build method, just before return Scaffold:
+> ![Capture HP](images/04-bagian5.png)
+6. Now that page contains the widget you want to show on the right, you can probably guess what other change is needed. Here's _MyHomePageState after that single remaining change:
+> ![Capture HP](images/05-bagian5.png)
+7. Responsiveness: Inside _MyHomePageState's build method, put your cursor on Scaffold. Call up the Refactor menu with Ctrl+.
+Select Wrap with Builder and press Enter.
+Modify the name of the newly added Builder to LayoutBuilder.
+Modify the callback parameter list from (context) to (context, constraints).
+> ![Capture HP](images/06-bagian5.png)
+8. Now, your app responds to its environment, such as screen size, orientation, and platform! In other words, it's responsive!.
+> ![Capture HP](images/07-bagian5.gif)
 
 ---
+
+## 📱 Add navigation rail
+Most apps can't fit everything into a single screen. This particular app probably could, but for didactic purposes, you are going to create a separate screen for the user's favorites. To switch between the two screens, you are going to implement your first StatefulWidget.
+**Steps:**
+1. Add a new class named FavoritesPage to replace the Placeholder widget.
+> ![Capture HP](images/01-bagian6.png)
+2. This is the final result!
+> ![Capture HP](images/02-bagian6.gif)
